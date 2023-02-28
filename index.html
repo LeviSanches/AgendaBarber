@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edson Barber</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+       
+    <div class="content">   
+    <img src="imagens/logo s fundo200px.png" alt="logo-barbearia" id="logo">     
+    <h1>Dados do Cliente</h1>
+    <form id="form">                
+    <div>
+        <p>Nome:</p>
+        <input type="text" placeholder="Digite o seu nome" class="inputs required" oninput="validarNome()">
+        <span class="span-required">Nome deve conter no mínimo 3 caracteres</span>
+    </div>
+    <div>
+        <p>Whatsapp:</p>
+        <input type="tel" id="telefone" placeholder="(99) 99999-9999" class="inputs required" oninput="validarTelefone()" maxlength="15">
+        <span class="span-required">Digite um número válido</span>
+    </div>
+    <button type="submit" id="botao" onclick="validarBotao()">Avançar</button>
+    
+    </form>
+    
+    </div>
+    
+    <div class="social">
+        <h3>Contato:</h3>
+        <a href="https://www.instagram.com/edsonaraujobarber/" target="_blank" rel="external"><img
+                src="imagens/instagram30px.png"> @edson_barberr</a>
+        <a href="https://www.instagram.com/diillbarber/" target="_blank" rel="external"><img src="imagens/instagram30px.png"> @diillbarber</a>
+    </div>
+    <br>
+    <footer>
+        <address>
+            <p>Deseja automatizar o seu agendamento? Entre em contato comigo pelo<a href="https://www.instagram.com/levi_sanchesz/" target="_blank" rel="author">Instagram</a>ou<a href="https://api.whatsapp.com/send?phone=5575982023426" target="_blank" rel="author">Whatsapp.</a></p>            
+        </address>
+    </footer>
+</body>
+
+<script src="scripts.js"></script>
+
+</html>
