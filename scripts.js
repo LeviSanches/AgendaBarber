@@ -96,9 +96,9 @@ function validarBotao(){
             else if(segundos == 2) {
                 mostrarErro(0); 
                 mostrarErro(1);
-
                 clearInterval(temporizador);
             }
+            
             segundos++;
             
             }, 400);
@@ -259,6 +259,21 @@ function dataAtual() {
     document.getElementById("date-input").setAttribute("min", dataAtual);
 }
 
+//validar campo horario
+
+function horarioAtual(){
+    let horaAtual = new Date();
+    let hora = horaAtual.getHours();
+    let opcoes = document.getElementsByClassName("opcao");
+
+    for(let i = 0; i < opcoes.length; i++) {
+        let opcao = opcoes[i];
+        if(opcao.value < hora) {
+            opcao.style.display = "none";
+        }
+    }
+}
+
 //validar botão
 function validarBotaoConfirmar() {
     const dataInput = document.getElementById("date-input");
@@ -271,6 +286,8 @@ function validarBotaoConfirmar() {
         window.open("final.html", "_self");
     }
 }
+
+
 
     
 
