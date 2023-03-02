@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="scripts.js"></script>  
     <link rel="shortcut icon" href="imagens/Google-Noto-Emoji-Travel-Places-42527-barber-pole.512.png" type="image/x-icon">
+    <script src="jquery-3.6.3.min.js"></script>
     <title>Edson Barber</title>
     
     
@@ -20,13 +21,13 @@
 
     <div class="content">        
         <h1>Selecione a data:</h1>  
-        <form id="form">  
+        <form>  
             <div>
-            <input id="date-input" type="date" class="inputs required-data" onclick="dataAtual()">
+            <input id="date-input" type="date" class="inputs required-data" onclick="dataAtual()" oninput="diaDeFuncionamento()">
             </div>      
             <div>
                 <select id="horario" name="horario" class="inputs required-data" onclick="horarioAtual()">
-                  <option class="opcao" value="">Selecione um horário</option>
+                  <option class="opcao" value="0">Selecione um horário</option>
                   <option class="opcao" value="8">8:00h</option>
                   <option class="opcao" value="9">9:00h</option>
                   <option class="opcao" value="10">10:00h</option>
@@ -37,7 +38,8 @@
                   <option class="opcao" value="17">17:00h</option>
                   <option class="opcao" value="18">18:00h</option>
                   <option class="opcao" value="19">19:00h</option>
-                </select>                
+                </select>   
+                <span id="span-select">Sem horário disponível.</span>             
             </div>    
             <button onclick="validarBotaoConfirmar()" type="button">Confirmar</button>            
         </form>               
@@ -48,9 +50,9 @@
             <ul id="lista-social">
                 <li>
                     <div id="edson">
+                        <p>Edson Araújo</p>
                         <a href="https://www.instagram.com/edsonaraujobarber/" target="_blank" rel="external"><img class="social-image" src="imagens/instagram.png" alt="instagram de Edson"></a>
                         <a href="https://api.whatsapp.com/send?phone=5575982788012" target="_blank" rel="external"><img class="social-image" src="imagens/Whatsapp-icon.png" alt="Whatsapp de Edson"></a>
-                        <p>Edson Araújo</p>
                     </div>
                 </li>
                 <img src="imagens/logo s fundo200px.png" alt="logo-barbearia" id="logo">
