@@ -289,17 +289,28 @@ function horarioAtual() {
     let hora = horaAtual.getHours();
     let opcoes = document.getElementsByClassName("opcao");
     if (inputDia.value === diaHoje) {
-        for(let i = 0; i < opcoes.length; i++) {
+        for(let i = 1; i < opcoes.length; i++) {
             let opcao = opcoes[i];
             if(opcao.value < hora) {                
                 opcao.style.display = "none";
-            } else {
-                opcao.style.display = "block";
             }
         } 
     }
+    else if (inputDia.value !== diaHoje) {
+        for(let i = 1; i < opcoes.length; i++) {
+            let opcao = opcoes[i];
+            if(opcao.value < hora) {                
+                opcao.style.display = "";
+            }
+
+        } 
+    }
+
+
+
     
 }
+
 
 //validar botão
 function validarBotaoConfirmar() {        
