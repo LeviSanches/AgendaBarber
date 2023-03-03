@@ -19,10 +19,10 @@
         <h1>Selecione a data:</h1> 
         <form>  
             <div>
-            <input id="date-input" type="date" class="inputs required-data" onclick="dataAtualNova()" oninput="diaDeFuncionamento()">
+            <input id="date-input" type="date" class="inputs required-data" onclick="dataAtualNova()" oninput="diaDeFuncionamento()" onchange="horarioAtual()">
             </div>      
             <div>
-                <select id="horario" name="horario" class="inputs required-data" onclick="horarioAtual()">
+                <select id="horario" name="horario" class="inputs required-data">
                   <option class="opcao" value="0">Selecione um horário</option>
                   <option class="opcao" value="8">8:00h</option>
                   <option class="opcao" value="9">9:00h</option>
@@ -36,7 +36,7 @@
                   <option class="opcao" value="19">19:00h</option>
                 </select>   
                 <span id="span-select">Sem horário disponível.</span>             
-            </div> 
+            </div>             
             <button onclick="validarBotaoConfirmar()" type="button">Confirmar</button>            
         </form>               
     </div>

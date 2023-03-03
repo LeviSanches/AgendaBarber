@@ -253,9 +253,6 @@ function escolherServico(servico) {
 //------------------------------------------------------------------------------------------------------------------
 
 // ESCOLHA DA DATA
-
-
-
 //validar o campo data
 function dataAtualNova() {
     let dataMaxima = new Date();
@@ -264,11 +261,6 @@ function dataAtualNova() {
     let dataAtual = dataMaxima.toISOString().slice(0, 10);
     document.getElementById("date-input").setAttribute("max", dataAtual);
     document.getElementById("date-input").setAttribute("min", dataMinima);
-}
-
-function dataAtual() {
-    let dataAtual = new Date().toISOString().slice(0, 10);
-    document.getElementById("date-input").setAttribute("min", dataAtual);
 }
 
 //validar dia de funcionamento
@@ -302,8 +294,6 @@ function horarioAtual() {
             let opcao = opcoes[i];
             if (opcao.value < hora) {                
                 opcao.style.display = "none";
-            } else {
-                opcao.style.display = "";
             }
         } 
     }
