@@ -257,6 +257,15 @@ function escolherServico(servico) {
 
 
 //validar o campo data
+function dataAtualNova() {
+    let dataMaxima = new Date();
+    let dataMinima = new Date().toISOString().slice(0, 10);
+    dataMaxima.setDate(dataMaxima.getDate() + 60);
+    let dataAtual = dataMaxima.toISOString().slice(0, 10);
+    document.getElementById("date-input").setAttribute("max", dataAtual);
+    document.getElementById("date-input").setAttribute("min", dataMinima);
+}
+
 function dataAtual() {
     let dataAtual = new Date().toISOString().slice(0, 10);
     document.getElementById("date-input").setAttribute("min", dataAtual);
@@ -289,28 +298,24 @@ function horarioAtual() {
     let hora = horaAtual.getHours();
     let opcoes = document.getElementsByClassName("opcao");
     if (inputDia.value === diaHoje) {
-        for(let i = 1; i < opcoes.length; i++) {
+        for(let i = 0; i < opcoes.length; i++) {
             let opcao = opcoes[i];
-            if(opcao.value < hora) {                
+            if (opcao.value < hora) {                
                 opcao.style.display = "none";
-            }
-        } 
-    }
-    else if (inputDia.value !== diaHoje) {
-        for(let i = 1; i < opcoes.length; i++) {
-            let opcao = opcoes[i];
-            if(opcao.value < hora) {                
+            } else {
                 opcao.style.display = "";
             }
-
         } 
     }
-
-
-
+    else {
+        for (let y = 0; y < opcoes.length; y++) {
+            let opcao = opcoes[y];
+            opcao.style.display = "";
+        }
+    }
+    
     
 }
-
 
 //validar botão
 function validarBotaoConfirmar() {        
