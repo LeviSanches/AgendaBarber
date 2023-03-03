@@ -292,7 +292,7 @@ function horarioAtual() {
     if (inputDia.value === diaHoje) {
         for(let i = 0; i < opcoes.length; i++) {
             let opcao = opcoes[i];
-            if (opcao.value < hora) {                
+            if (opcao.value <= hora) {                
                 opcao.style.display = "none";
             }
         } 
