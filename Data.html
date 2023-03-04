@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,11 +18,11 @@
         <h1>Selecione a data:</h1> 
         <form>  
             <div>
-            <input id="date-input" type="date" class="inputs required-data" onclick="dataAtualNova()" oninput="diaDeFuncionamento()" onchange="horarioAtual()">
+            <input id="date-input" type="date" class="inputs required-data" onclick="dataMinMax()" oninput="diaDeFuncionamento()" onchange="horarioDisponivel()">
             </div>      
             <div>
-                <select id="horario" name="horario" class="inputs required-data">
-                  <option class="opcao" value="0">Selecione um horário</option>
+                <select id="horario" name="horario" class="inputs required-data" >
+                  <option class="opcao" value="">Selecione um horário</option>
                   <option class="opcao" value="8">8:00h</option>
                   <option class="opcao" value="9">9:00h</option>
                   <option class="opcao" value="10">10:00h</option>
@@ -36,8 +35,15 @@
                   <option class="opcao" value="19">19:00h</option>
                 </select>   
                 <span id="span-select">Sem horário disponível.</span>             
-            </div>             
-            <button onclick="validarBotaoConfirmar()" type="button">Confirmar</button>            
+            </div> 
+            <!--<div>
+                <ul id="lista-resumo">
+                    <li>Barbeiro: Edson</li>
+                    <li>Serviço: Corte Clássico + Barba</li>
+                    <li>Data: 15/03/2023 - 16:00h</li>
+                </ul>
+            </div>-->               
+            <button onclick="validarBotaoConfirmar()" type="button">Confirmar</button>                   
         </form>               
     </div>
     <div id="contato">
@@ -63,7 +69,7 @@
         </div>
         <footer>
             <address>
-                <p>Deseja automatizar o seu agendamento? Entre em contato comigo pelo<a href="https://www.instagram.com/levi_sanchesz/" target="_blank" rel="author">Instagram</a>ou<a href="https://api.whatsapp.com/send?phone=5575982023426" target="_blank" rel="author">Whatsapp.</a></p>            
+                <p>Deseja automatizar o seu agendamento? Entre em contato conosco pelo<a href="https://www.instagram.com/7sistema/" target="_blank" rel="author">Instagram</a>ou<a href="https://api.whatsapp.com/send?phone=5575982868624" target="_blank" rel="author">Whatsapp.</a></p>            
             </address>
         </footer>
     </div>

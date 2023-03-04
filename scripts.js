@@ -254,23 +254,31 @@ function escolherServico(servico) {
 
 // ESCOLHA DA DATA
 //validar o campo data
-function dataAtualNova() {
-    let dataMaxima = new Date();
-    let dataMinima = new Date().toISOString().slice(0, 10);
-    dataMaxima.setDate(dataMaxima.getDate() + 60);
-    let dataAtual = dataMaxima.toISOString().slice(0, 10);
-    document.getElementById("date-input").setAttribute("max", dataAtual);
-    document.getElementById("date-input").setAttribute("min", dataMinima);
-}
 
+function dataMinMax() {
+    let data = new Date();
+
+    let dataMenosTresHoras = new Date(data);
+    dataMenosTresHoras.setHours(data.getHours() - 3);    
+    let dataAtualFormatada = dataMenosTresHoras.toISOString().slice(0, 10);    
+
+    let dataMax = data;
+    dataMax.setDate(dataMax.getDate() + 60);
+    let dataMaxima = dataMax.toISOString().slice(0, 10);
+
+    document.getElementById("date-input").setAttribute("min", dataAtualFormatada);
+    document.getElementById("date-input").setAttribute("max", dataMaxima);
+
+}
 //validar dia de funcionamento
 function diaDeFuncionamento() {
     let inputDia = document.getElementById("date-input");
-    let diaSelecionado = new Date(inputDia.value);
-    let diaDaSemana = diaSelecionado.getDay();
     let selectHorario = document.getElementById("horario")
     let spanSelect = document.getElementById("span-select")
-    
+
+    let diaSelecionado = new Date(inputDia.value);
+    let diaDaSemana = diaSelecionado.getDay();
+
     if (diaDaSemana === 1 || diaDaSemana === 6){
         alert("Não trabalhamos as terças-feiras nem aos domingos.");
         selectHorario.style.display = "none";
@@ -283,36 +291,40 @@ function diaDeFuncionamento() {
 }
 
 //validar campo horario
-function horarioAtual() {
+function horarioDisponivel() {
     let inputDia = document.getElementById("date-input");
-    let diaHoje = new Date().toISOString().slice(0, 10);  
-    let horaAtual = new Date();
-    let hora = horaAtual.getHours();
     let opcoes = document.getElementsByClassName("opcao");
-    if (inputDia.value === diaHoje) {
+    let data = new Date();
+    let horaAtual = data.getHours();
+    let dataMenosTresHoras = new Date(data);
+    dataMenosTresHoras.setHours(data.getHours() - 3);    
+    let dataAtualFormatada = dataMenosTresHoras.toISOString().slice(0, 10); 
+
+    if (inputDia.value === dataAtualFormatada) {
         for(let i = 0; i < opcoes.length; i++) {
             let opcao = opcoes[i];
-            if (opcao.value <= hora) {                
+            if (opcao.value <= horaAtual) {
                 opcao.style.display = "none";
             }
-        } 
+        }
     }
     else {
-        for (let y = 0; y < opcoes.length; y++) {
-            let opcao = opcoes[y];
+        for (let i = 0; i < opcoes.length; i++) {
+            let opcao = opcoes[i];
             opcao.style.display = "";
         }
     }
-    
-    
 }
+
+
+
 
 //validar botão
 function validarBotaoConfirmar() {        
     let dataInput = document.getElementById("date-input");
     let horarioSelect = document.getElementById("horario");
 
-    if (dataInput.value === '' || horarioSelect.value === '0') {
+    if (dataInput.value === '' || horarioSelect.value === '') {
         alert("verifique os campos e tente novamente.");
     } 
     else {  

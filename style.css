@@ -64,12 +64,10 @@ address {
 button {
     padding: 1rem;
     font-size: 1rem;
-    outline: none;
-    border: none;
     border-radius: 5px;
     border: 2px solid;
     border-color: #f1e4d8;
-    margin-top: 1rem;
+    margin-top: 12px;
     background-color: #000000de;
     color: #f1e4d8;
     cursor: pointer;
@@ -182,6 +180,7 @@ select, option{
     border-color: #ffbd59;
     border-radius: 20px;
     padding-right: 40px;
+    list-style-type: none;
 }
 
 #form {
@@ -206,6 +205,21 @@ select, option{
     width: 5rem;
     height: auto;
 }
+
+#lista-resumo {
+    border: 2px solid;
+    border-radius: 1rem; 
+    border-color: #ffbd59;
+    text-align: left;
+    padding: 15px 15px 15px 25px;
+    color: #f1e4d8;
+    background-color: #000000d0;
+    list-style-type: "- ";
+}
+
+
+
+
 
 
 
