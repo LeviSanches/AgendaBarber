@@ -223,7 +223,7 @@ input[type="radio"] {
     list-style-type: "- ";
 }
 #cliente {
-    display: none;
+    display: block;
 }
 
 #barbeiro {
@@ -231,7 +231,7 @@ input[type="radio"] {
 }
 
 #servico {
-    display: block;
+    display: none;
 }
 
 #data {
