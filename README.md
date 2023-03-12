@@ -1,5 +1,5 @@
 # AgendaBarber
-##Front-end do meu primeiro site desenvolvido por mim, usando os conhecimentos adquiridos ao longo da jornada como dev.
+##Front-end do primeiro site desenvolvido por mim, usando os conhecimentos adquiridos ao longo da jornada como dev.
 
 ### Site de agendamento de horário para barbearia. (imagens autorizadas dos profissionais).
 
