@@ -185,6 +185,11 @@ function validarBotao(){
     if (campos[0].value.length >= 3 && telRegex.test(campos[1].value)) {
         formBarbeiro.style.display = "block"
         formCliente.style.display = "none"
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
     }
 
 }
@@ -223,11 +228,21 @@ function escolherBarbeiro() {
 function avancarServico() {    
     formServico.style.display = "block";
     formBarbeiro.style.display = "none";
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
 }
 
 function voltarCliente() {
     formBarbeiro.style.display = "none";
     formCliente.style.display = "block";
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
 }
     
 
@@ -249,16 +264,11 @@ function escolherServico(servico) {
         }
     }
 
-    
-     
-   
-
-
     if (servico === '18') {  
         for (let i = 0; i < borda.length; i++) {
             if (i === 0 || i === 1) {
-                borda[0].style.border = "5px solid #ffbd59"; 
-                borda[1].style.border = "5px solid #ffbd59";                 
+                borda[0].style.border = "2px solid #ffbd59"; 
+                borda[1].style.border = "2px solid #ffbd59";                 
             } else {
                 borda[i].style.border = "";
             }
@@ -269,8 +279,8 @@ function escolherServico(servico) {
     else if (servico === '20') {
         for (let i = 0; i < borda.length; i++) {
             if (i === 2 || i === 3) {
-                borda[2].style.border = "5px solid #ffbd59"; 
-                borda[3].style.border = "5px solid #ffbd59";                 
+                borda[2].style.border = "2px solid #ffbd59"; 
+                borda[3].style.border = "2px solid #ffbd59";                 
             } else {
                 borda[i].style.border = "";
             }
@@ -281,8 +291,8 @@ function escolherServico(servico) {
     else if (servico === '25') {
         for (let i = 0; i < borda.length; i++) {
             if (i === 4 || i === 5) {
-                borda[4].style.border = "5px solid #ffbd59"; 
-                borda[5].style.border = "5px solid #ffbd59";                 
+                borda[4].style.border = "2px solid #ffbd59"; 
+                borda[5].style.border = "2px solid #ffbd59";                 
             } else {
                 borda[i].style.border = "";
             }
@@ -293,8 +303,8 @@ function escolherServico(servico) {
     else if (servico === '24') {
         for (let i = 0; i < borda.length; i++) {
             if (i === 6 || i === 7) {
-                borda[6].style.border = "5px solid #ffbd59"; 
-                borda[7].style.border = "5px solid #ffbd59";                 
+                borda[6].style.border = "2px solid #ffbd59"; 
+                borda[7].style.border = "2px solid #ffbd59";                 
             } else {
                 borda[i].style.border = "";
             }
@@ -305,8 +315,8 @@ function escolherServico(servico) {
     else if (servico === '28') {
         for (let i = 0; i < borda.length; i++) {
             if (i === 8 || i === 9) {
-                borda[8].style.border = "5px solid #ffbd59"; 
-                borda[9].style.border = "5px solid #ffbd59";                 
+                borda[8].style.border = "2px solid #ffbd59"; 
+                borda[9].style.border = "2px solid #ffbd59";                 
             } else {
                 borda[i].style.border = "";
             }
@@ -317,8 +327,8 @@ function escolherServico(servico) {
     else if (servico === '12') {
         for (let i = 0; i < borda.length; i++) {
             if (i === 10 || i === 11) {
-                borda[10].style.border = "5px solid #ffbd59"; 
-                borda[11].style.border = "5px solid #ffbd59";                 
+                borda[10].style.border = "2px solid #ffbd59"; 
+                borda[11].style.border = "2px solid #ffbd59";                 
             } else {
                 borda[i].style.border = "";
             }
@@ -329,8 +339,8 @@ function escolherServico(servico) {
     else if (servico === '10') {
         for (let i = 0; i < borda.length; i++) {
             if (i === 12 || i === 13) {
-                borda[12].style.border = "5px solid #ffbd59"; 
-                borda[13].style.border = "5px solid #ffbd59";                 
+                borda[12].style.border = "2px solid #ffbd59"; 
+                borda[13].style.border = "2px solid #ffbd59";                 
             } else {
                 borda[i].style.border = "";
             }
@@ -341,8 +351,8 @@ function escolherServico(servico) {
     else if (servico === '8') {
         for (let i = 0; i < borda.length; i++) {
             if (i === 14 || i === 15) {
-                borda[14].style.border = "5px solid #ffbd59"; 
-                borda[15].style.border = "5px solid #ffbd59";                 
+                borda[14].style.border = "2px solid #ffbd59"; 
+                borda[15].style.border = "2px solid #ffbd59";                 
             } else {
                 borda[i].style.border = "";
             }
@@ -353,8 +363,8 @@ function escolherServico(servico) {
     else if (servico === '15') {
         for (let i = 0; i < borda.length; i++) {
             if (i === 16 || i === 17) {
-                borda[16].style.border = "5px solid #ffbd59"; 
-                borda[17].style.border = "5px solid #ffbd59";                 
+                borda[16].style.border = "2px solid #ffbd59"; 
+                borda[17].style.border = "2px solid #ffbd59";                 
             } else {
                 borda[i].style.border = "";
             }
@@ -367,11 +377,21 @@ function escolherServico(servico) {
 function avancarData() {    
     formServico.style.display = "none";
     formData.style.display = "block";
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
 }
 
 function voltarBarbeiro() {
     formBarbeiro.style.display = "block";
     formServico.style.display = "none";
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
 }
 
 //------------------------------------------------------------------------------------------------------------------
@@ -449,12 +469,6 @@ function horarioDisponivel() {
 }
 
 
-
-function voltarServico() {
-    formServico.style.display = "block";
-    formData.style.display = "none";
-}
-
 function mudancaHorario() {
     let botao = document.getElementById("botao-confirmar")   
     let resumo = document.getElementById("resumo") 
@@ -506,10 +520,25 @@ function validarFormulario() {
     }
 }
 
+function voltarServico() {
+    formServico.style.display = "block";
+    formData.style.display = "none";
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+}
+
 function enviarFormulario() {    
     //formCadastro.submit();  
     formFinal.style.display = "block";
     formData.style.display = "none";
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
 }
 
 
