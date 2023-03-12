@@ -11,26 +11,209 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="imagens/Google-Noto-Emoji-Travel-Places-42527-barber-pole.512.png" type="image/image.pngimage.pngx-icon">
     <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.6.3.min.js"></script>
 
 </head>
 <body>       
     <div class="content">            
-    <h1>Dados do Cliente</h1>
-    <form id="form">                
-        <div>
-            <p>Nome:</p>
-            <input type="text" placeholder="Digite o seu nome" class="inputs required" oninput="validarNome()">
-            <span class="span-required">Nome deve conter no mínimo 3 caracteres</span>
-        </div>
-        <div>
-            <p>Whatsapp:</p>
-            <input type="tel" id="telefone" placeholder="(99) 99999-9999" class="inputs required" oninput="validarTelefone()" maxlength="15">
-            <span class="span-required">Digite um número válido</span>
-        </div>
-        <button type="submit" id="botao" onclick="validarBotao()">Avançar</button>
         
-    </form>    
-    </div>   
+        <form id="form">                
+            <div id="cliente">
+                <h1>Dados do Cliente</h1>
+                <div>
+                    <p>Nome:</p>
+                    <input type="text" id="nome" placeholder="Digite o seu nome" class="inputs required" oninput="validarNome()">
+                    <span class="span-required">Nome deve conter no mínimo 3 caracteres</span>
+                </div>
+                <div>
+                    <p>Whatsapp:</p>
+                    <input type="tel" id="telefone" placeholder="DDD + número" class="inputs required" oninput="validarTelefone()" maxlength="15">
+                    <span class="span-required">Digite um número válido</span>
+                </div>
+                <button type="submit" id="botao" onclick="validarBotao()">Avançar</button>
+            </div>
+            <div id="barbeiro">
+                <h1>Escolha um dos profissionais abaixo:</h1>
+                <div>               
+                    <input class="input-radio" type="radio" id="edson" name="opcao" onclick="escolherBarbeiro()" value="Edson Araújo">
+                    <label for="edson" class="selecionado"><img src="imagens/Edson200px.png" class="imagem-barbeiro" alt=""> <p class="nome-barbeiro">Edson Araujo</p></label>        
+                </div>
+                <div>
+                    <input class="input-radio" type="radio" id="edilson" name="opcao" onclick="escolherBarbeiro()" value="Edilson Araújo">
+                    <label for="edilson" class="selecionado"><img src="imagens/Edilson200px.png" class="imagem-barbeiro" alt=""> <p class="nome-barbeiro">Edilson Araujo</p>
+                    </label>
+                </div>
+                <button type="button" onclick="voltarCliente()">Voltar</button>
+                <button type="button" onclick="avancarServico()">Avançar</button>
+            </div>
+            <div id="servico">
+                <div class="listaServicos">        
+                    <h1>Escolha o serviço</h1>
+                    <table>
+                        <tr>
+                            <th>CORTES</th>
+                            <th>PREÇO</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    <input onclick="escolherServico('18')" class="input-radio" type="radio" name="servico" value="Corte Clássico">
+                                    CORTE CLÁSSICO
+                                </label>
+                            </td>
+                            <td>
+                                <label>                                    
+                                    R$ 18,00
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    <input onclick="escolherServico('20')" class="input-radio" type="radio" name="servico" value="Corte Navalhado">
+                                    CORTE NAVALHADO
+                                </label>
+                            </td>
+                            <td>
+                                <label>                                    
+                                    R$ 20,00
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    <input onclick="escolherServico('25')" class="input-radio" type="radio" name="servico" value="Corte Tesoura">
+                                    CORTE TESOURA
+                                </label>
+                            </td>
+                            <td>
+                                <label>                                    
+                                    R$ 25,00
+                                </label>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    <input onclick="escolherServico('24')" class="input-radio" type="radio" name="servico" value="Corte Clássico + Tesoura">
+                                    CORTE CLÁSSICO + TESOURA
+                                </label>
+                            </td>
+                            <td>
+                                <label>                                    
+                                    R$ 24,00
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    <input onclick="escolherServico('28')" class="input-radio" type="radio" name="servico" value="Corte Clássico + Barba">
+                                    CORTE CLÁSSICO + BARBA
+                                </label>
+                            </td>
+                            <td>
+                                <label>                                    
+                                    R$ 28,00
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    <input onclick="escolherServico('12')" class="input-radio" type="radio" name="servico" value="Barba">
+                                    BARBA
+                                </label>
+                            </td>
+                            <td>
+                                <label>                                    
+                                    R$ 12,00
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    <input onclick="escolherServico('10')" class="input-radio" type="radio" name="servico" value="Friso">
+                                    FRISO
+                                </label>
+                            </td>
+                            <td>
+                                <label>                                    
+                                    R$ 10,00
+                                </label></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    <input onclick="escolherServico('8')" class="input-radio" type="radio" name="servico" value="Sobranchelha">
+                                    SOBRANCELHA
+                                </label>
+                            </td>
+                            <td>
+                                <label>                                    
+                                    R$ 8,00
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    <input onclick="escolherServico('15')" class="input-radio" type="radio" name="servico" value="Pigmentação">
+                                    PIGMENTAÇÃO
+                                </label>
+                            </td>
+                            <td>
+                                <label>                                    
+                                    R$ 15,00
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                    <div>
+                    <button type="button" onclick="voltarBarbeiro()">Voltar</button>
+                    <button type="button" onclick="avancarData()">Avançar</button>
+                    </div>
+                </div>
+            </div>
+            <div id="data">
+                <h1>Selecione a data:</h1> 
+                <div>
+                    <input id="date-input" type="date" class="inputs required-data" onclick="dataMinMax()" oninput="diaDeFuncionamento()" onchange="horarioDisponivel()">
+                </div>
+                <div>
+                    <select id="horario" name="horario" class="inputs required-data" onchange="mudancaHorario()">
+                      <option class="opcao" value="0">Selecione um horário</option>
+                      <option class="opcao" value="8">8:00h</option>
+                      <option class="opcao" value="9">9:00h</option>
+                      <option class="opcao" value="10">10:00h</option>
+                      <option class="opcao" value="11">11:00h</option>
+                      <option class="opcao" value="12">12:00h</option>
+                      <option class="opcao" value="14">14:00h</option>
+                      <option class="opcao" value="15">15:00h</option>
+                      <option class="opcao" value="16">16:00h</option>
+                      <option class="opcao" value="17">17:00h</option>
+                      <option class="opcao" value="18">18:00h</option>
+                      <option class="opcao" value="19">19:00h</option>
+                    </select>   
+                    <span id="span-select">Sem horário disponível.</span>             
+                </div> 
+                <div id="botoes">
+                    <button type="button" onclick="voltarServico()">Voltar</button>
+                    <button id="botao-confirmar" onclick="validarFormulario()" type="button">Avançar</button>                    
+                </div>
+                <div id="resumo">                                    
+                </div>
+                
+            </div>
+            <div id="final">
+                <h1 id="agendado">Horário agendado com sucesso!</h1>
+                <img id="check" src="imagens/check-unscreen.gif" alt="check!">
+            </div>
+        </form> 
+    </div>
     <div id="contato">
         <h2>Contato:</h2>
         <div id="social">
@@ -54,7 +237,7 @@
         </div>
         <footer>
             <address>
-                <p>Deseja automatizar o seu agendamento? Entre em contato comigo pelo<a href="https://www.instagram.com/levi_sanchesz/" target="_blank" rel="author">Instagram</a>ou<a href="https://api.whatsapp.com/send?phone=5575982023426" target="_blank" rel="author">Whatsapp.</a></p>            
+                <p>Deseja automatizar o seu agendamento? Entre em contato conosco pelo<a href="https://www.instagram.com/7sistema/" target="_blank" rel="author">Instagram</a>ou<a href="https://api.whatsapp.com/send?phone=5575982868624" target="_blank" rel="author">Whatsapp.</a></p>            
             </address>
         </footer>
     </div>

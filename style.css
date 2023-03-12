@@ -79,9 +79,8 @@ select, option{
     font-weight: bold; 
 }
 
-.imagem-barbeiro  {
-    border: 2px solid;
-    border-radius: 7rem;
+.imagem-barbeiro  {    
+    border-radius: 8rem;
     color: #ffbd59;
 }
 
@@ -139,8 +138,10 @@ select, option{
     align-items: center;
 }
 
-.input-radio {
-    display: none;
+input[type="radio"] {
+  appearance: none;
+  outline: none;
+  border: none;
 }
 
 .opcao {
@@ -183,7 +184,7 @@ select, option{
     list-style-type: none;
 }
 
-#form {
+#cliente {
     background-color: #000000d0;
     border: 2px solid;
     border-color: #ffbd59;
@@ -215,6 +216,53 @@ select, option{
     color: #f1e4d8;
     background-color: #000000d0;
     list-style-type: "- ";
+}
+#cliente {
+    display: none;
+}
+
+#barbeiro {
+    display: none;
+}
+
+#servico {
+    display: none;
+}
+
+#data {
+    display: block;
+}
+
+#final {
+    display: none;
+}
+
+#resumo {    
+    border-radius: 15px;
+    background-color: #000000d0;
+    margin: 20px;
+    padding: 2px 2px 1rem 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    display: none;
+    
+}
+
+#botao-formulario {
+    display: block;
+}
+
+#botoes {    
+    gap: 5px;
+}
+
+#botao-agendar {    
+    border: 3px solid;
+    border-color: #ffbd59;
+    color: #ffbd59;
+    font-size: 1.5rem;
 }
 
 
