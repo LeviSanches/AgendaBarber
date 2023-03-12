@@ -22,7 +22,7 @@ h2, h3, p, footer {
 }
 
 table {
-    background-color: #0000008a;
+    background-color: #000000c8;
     border: 2px solid;
     border-radius: 10px;    
     border-color: #f1e4d89a;   
@@ -40,7 +40,7 @@ th {
 td {
     padding: 10px;
     border: 1px solid;
-    border-radius: 10px;
+    border-radius: 5px;
     color: #f1e4d8; 
     font-size: 15px;
 }
@@ -149,9 +149,12 @@ input[type="radio"] {
     background-color: #000000;
 }
 
-#logo {
-    image-resolution: 100px;
+#logo {    
     margin: 1rem;
+}
+
+#logo-contato {
+    width: 75px;
 }
 
 #span-data {
@@ -174,7 +177,7 @@ input[type="radio"] {
     align-items: center;
 }
 
-#edson, #edilson {
+#edson, #edilson, #bruno {
     display: flex;
 }
 
@@ -220,7 +223,7 @@ input[type="radio"] {
     list-style-type: "- ";
 }
 #cliente {
-    display: block;
+    display: none;
 }
 
 #barbeiro {
@@ -228,7 +231,7 @@ input[type="radio"] {
 }
 
 #servico {
-    display: none;
+    display: block;
 }
 
 #data {

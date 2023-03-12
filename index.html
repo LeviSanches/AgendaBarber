@@ -37,11 +37,16 @@
                 <h1>Escolha um dos profissionais abaixo:</h1>
                 <div>               
                     <input class="input-radio" type="radio" id="edson" name="opcao" onclick="escolherBarbeiro()" value="Edson Araújo">
-                    <label for="edson" class="selecionado"><img src="imagens/Edson200px.png" class="imagem-barbeiro" alt=""> <p class="nome-barbeiro">Edson Araujo</p></label>        
+                    <label for="edson" class="selecionado"><img src="imagens/Edson200px.png" class="imagem-barbeiro" alt="imagem de Edson"> <p class="nome-barbeiro">Edson Araujo</p></label>        
                 </div>
                 <div>
                     <input class="input-radio" type="radio" id="edilson" name="opcao" onclick="escolherBarbeiro()" value="Edilson Araújo">
-                    <label for="edilson" class="selecionado"><img src="imagens/Edilson200px.png" class="imagem-barbeiro" alt=""> <p class="nome-barbeiro">Edilson Araujo</p>
+                    <label for="edilson" class="selecionado"><img src="imagens/Edilson200px.png" class="imagem-barbeiro" alt="imagem de Edilson"> <p class="nome-barbeiro">Edilson Araujo</p>
+                    </label>
+                </div>
+                <div>
+                    <input class="input-radio" type="radio" id="bruno" name="opcao" onclick="escolherBarbeiro()" value="Bruno Luiz">
+                    <label for="bruno" class="selecionado"><img src="imagens/bruno200px.png" class="imagem-barbeiro" alt="imagem de Bruno"> <p class="nome-barbeiro">Bruno Luiz</p>
                     </label>
                 </div>
                 <button type="button" onclick="voltarCliente()">Voltar</button>
@@ -64,7 +69,7 @@
                             </td>
                             <td>
                                 <label>                                    
-                                    R$ 18,00
+                                     R$ 18,00
                                 </label>
                             </td>
                         </tr>
@@ -145,6 +150,19 @@
                                 <label>                                    
                                     R$ 10,00
                                 </label></td>
+                        </tr>                        
+                        <tr>
+                            <td>
+                                <label>
+                                    <input onclick="escolherServico('15')" class="input-radio" type="radio" name="servico" value="Pigmentação">
+                                    PIGMENTAÇÃO
+                                </label>
+                            </td>
+                            <td>
+                                <label>                                    
+                                    R$ 15,00
+                                </label>
+                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -156,19 +174,6 @@
                             <td>
                                 <label>                                    
                                     R$ 8,00
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input onclick="escolherServico('15')" class="input-radio" type="radio" name="servico" value="Pigmentação">
-                                    PIGMENTAÇÃO
-                                </label>
-                            </td>
-                            <td>
-                                <label>                                    
-                                    R$ 15,00
                                 </label>
                             </td>
                         </tr>
@@ -221,18 +226,24 @@
             <ul id="lista-social">
                 <li>
                     <div id="edson">
-                        <p>Edson Araújo</p>
                         <a href="https://www.instagram.com/edsonaraujobarber/" target="_blank" rel="external"><img class="social-image" src="imagens/instagram.png" alt="instagram de Edson"></a>
                         <a href="https://api.whatsapp.com/send?phone=5575982788012" target="_blank" rel="external"><img class="social-image" src="imagens/Whatsapp-icon.png" alt="Whatsapp de Edson"></a>
+                        <p>Edson Araújo</p>
+                    </div>
+                    <div id="edilson">                        
+                        <a href="https://www.instagram.com/diillbarber/" target="_blank" rel="external"><img class="social-image" src="imagens/instagram.png" alt="instagram de Edilson"></a>
+                        <a href="https://api.whatsapp.com/send?phone=5575983185932" target="_blank" rel="external"><img class="social-image" src="imagens/Whatsapp-icon.png" alt="Whatsapp de Edilson"></a>             
+                        <p>Edilson Araújo</p>           
+                    </div>
+                    <div id="bruno">                        
+                        <a href="https://www.instagram.com/brunodocorte_fc/" target="_blank" rel="external"><img class="social-image" src="imagens/instagram.png" alt="instagram de Bruno"></a>
+                        <a href="https://api.whatsapp.com/send?phone=5575981817339" target="_blank" rel="external"><img class="social-image" src="imagens/Whatsapp-icon.png" alt="Whatsapp de Bruno"></a>                        
+                        <p>Bruno Luiz</p>
                     </div>
                 </li>
-                <img src="imagens/logo s fundo200px.png" alt="logo-barbearia" id="logo">
+                <img src="imagens/logo s fundo200px.png" alt="logo-barbearia" id="logo-contato">
                 <li>
-                    <div id="edilson">
-                        <a href="https://www.instagram.com/diillbarber/" target="_blank" rel="external"><img class="social-image" src="imagens/instagram.png" alt="instagram de Edilson"></a>
-                        <a href="https://api.whatsapp.com/send?phone=5575983185932" target="_blank" rel="external"><img class="social-image" src="imagens/Whatsapp-icon.png" alt="Whatsapp de Edilson"></a>
-                        <p>Edilson Araújo</p>
-                    </div>
+                    
                 </li>
             </ul>
         </div>

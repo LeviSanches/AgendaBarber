@@ -214,13 +214,20 @@ function escolherBarbeiro() {
         if (barbeiroValue === "Edson Araújo") {
             imagens[0].style.border = "5px solid #ffbd59";
             imagens[1].style.border = "";
+            imagens[2].style.border = "";
         }
         else if (barbeiroValue === "Edilson Araújo") {
             imagens[1].style.border = "5px solid #ffbd59";
             imagens[0].style.border = "";
+            imagens[2].style.border = "";
+        }
+        else if (barbeiroValue === "Bruno Luiz") {
+            imagens[2].style.border = "5px solid #ffbd59";
+            imagens[1].style.border = "";
+            imagens[0].style.border = "";
         }
         else {
-            imagens[i].style.border = "none"; // remove a borda das imagens que não foram selecionadas
+            imagens[i].style.border = ""; // remove a borda das imagens que não foram selecionadas
         }
     }
 }
@@ -255,7 +262,7 @@ const servico = document.getElementsByClassName(".input-radio")
 
 function escolherServico(servico) {
     let servicoInputs = document.querySelectorAll("input[name='servico']");
-    let servicoValue; 
+    //let servicoValue; 
     let borda = document.getElementsByTagName("td");    
     for (let i = 0; i < servicoInputs.length; i++) {
         if (servicoInputs[i].checked) {
@@ -348,7 +355,7 @@ function escolherServico(servico) {
         }    
     }
 
-    else if (servico === '8') {
+    else if (servico === '15') {
         for (let i = 0; i < borda.length; i++) {
             if (i === 14 || i === 15) {
                 borda[14].style.border = "2px solid #ffbd59"; 
@@ -360,7 +367,7 @@ function escolherServico(servico) {
         }    
     }
 
-    else if (servico === '15') {
+    else if (servico === '8') {
         for (let i = 0; i < borda.length; i++) {
             if (i === 16 || i === 17) {
                 borda[16].style.border = "2px solid #ffbd59"; 
