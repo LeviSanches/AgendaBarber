@@ -31,7 +31,7 @@
                     <input type="tel" id="telefone" placeholder="DDD + número" class="inputs required" oninput="validarTelefone()" maxlength="15">
                     <span class="span-required">Digite um número válido</span>
                 </div>
-                <button type="submit" id="botao" onclick="validarBotao()">Avançar</button>
+                <button type="button" onclick="validarBotao()">Avançar</button>
             </div>
             <div id="barbeiro">
                 <h1>Escolha um dos profissionais abaixo:</h1>
@@ -49,8 +49,10 @@
                     <label for="bruno" class="selecionado"><img src="imagens/bruno200px.png" class="imagem-barbeiro" alt="imagem de Bruno"> <p class="nome-barbeiro">Bruno Luiz</p>
                     </label>
                 </div>
-                <button type="button" onclick="voltarCliente()">Voltar</button>
-                <button type="button" onclick="avancarServico()">Avançar</button>
+                <div class="botoes">
+                    <button type="button" onclick="voltarCliente()">Voltar</button>
+                    <button type="button" id="botao-barbeiro" onclick="avancarServico()">Avançar</button>
+                </div>
             </div>
             <div id="servico">
                 <div class="listaServicos">        
@@ -178,9 +180,9 @@
                             </td>
                         </tr>
                     </table>
-                    <div>
-                    <button type="button" onclick="voltarBarbeiro()">Voltar</button>
-                    <button type="button" onclick="avancarData()">Avançar</button>
+                    <div class="botoes">
+                        <button type="button" onclick="voltarBarbeiro()">Voltar</button>
+                        <button id="botao-servico" type="button" onclick="avancarData()">Avançar</button>
                     </div>
                 </div>
             </div>
@@ -206,7 +208,7 @@
                     </select>   
                     <span id="span-select">Sem horário disponível.</span>             
                 </div> 
-                <div id="botoes">
+                <div class="botoes">
                     <button type="button" onclick="voltarServico()">Voltar</button>
                     <button id="botao-confirmar" onclick="validarFormulario()" type="button">Avançar</button>                    
                 </div>

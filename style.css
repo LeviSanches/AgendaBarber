@@ -22,7 +22,7 @@ h2, h3, p, footer {
 }
 
 table {
-    background-color: #000000c8;
+    background-color: #000000de;
     border: 2px solid;
     border-radius: 10px;    
     border-color: #f1e4d89a;   
@@ -65,14 +65,15 @@ address {
 button {
     padding: 1rem;
     font-size: 1rem;
-    border-radius: 5px;
-    border: 2px solid;
+    border-radius: 10px;
+    border: 1px solid;
     border-color: #f1e4d8;
-    margin-top: 12px;
+    margin: 12px 4px;
     background-color: #000000de;
     color: #f1e4d8;
     cursor: pointer;
     font-weight: bold; 
+    
 }
 
 select, option{
@@ -86,7 +87,7 @@ select, option{
 }
 
 .content {
-    background-image: linear-gradient(#000000, #5225003d);                                  
+    background-image: linear-gradient(#000000e6, #5225003d);                                  
     padding: 2em;
     display: flex;
     flex-direction: column;
@@ -118,7 +119,7 @@ select, option{
     color: #292929;
 }
 
-.span-required, .span-dia {
+.span-required {
     display: none;
     font-size: 0.9rem;
     margin: 3px 0 0 1px;
@@ -167,7 +168,7 @@ input[type="radio"] {
 
 #contato {
     text-align: center;  
-    background-image: linear-gradient(#5225003d, #000000c4,#000000eb, #000000f8, #000000fe );  
+    background-image: linear-gradient(#5225003d, #0000008f,#000000c6, #000000de, #000000f9 );  
 }
 
 #social {    
@@ -227,19 +228,47 @@ input[type="radio"] {
 }
 
 #barbeiro {
+    
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
     display: none;
+}
+#barbeiro.show {
+    opacity: 1;
+    display: block;
 }
 
 #servico {
+    
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
     display: none;
 }
+#servico.show {
+    opacity: 1;
+    display: block;
+}
 
-#data {
-    display: none;
+#data {  
+    
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: none; 
+}
+#data.show {
+    opacity: 1;
+    display: block;
 }
 
 #final {
+    
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
     display: none;
+}
+#final.show {
+    opacity: 1;
+    display: block;
 }
 
 #resumo {    
@@ -252,15 +281,32 @@ input[type="radio"] {
     align-items: center;
     text-align: center;
     display: none;
-    
+}
+.botoes {      
+    display: inline-block;
+    text-align: center;
+    align-items: center;    
+}
+
+#botao-barbeiro {    
+    opacity: 0;
+    transition: opacity 1s ease-in-out;    
+}
+
+#botao-barbeiro.show {
+    opacity: 1;
+}
+
+#botao-servico {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+#botao-servico.show {
+    opacity: 1;
 }
 
 #botao-formulario {
     display: block;
-}
-
-#botoes {    
-    gap: 5px;
 }
 
 #botao-agendar {    

@@ -13,8 +13,9 @@ const span = document.querySelectorAll(".span-required");
 const telRegex = /^\(\d{2}\) 9\d{4}-\d{4}$/;4
 
 //função para mostrar as validações após clicar no botão "avançar"
-formCadastro.addEventListener("submit", (event) => {
+formCadastro.addEventListener("button", (event) => {
     event.preventDefault();
+    alert("oii")
     validarNome();
     validarTelefone();
 })
@@ -69,7 +70,7 @@ function validarTelefone(){
 function validarBotao(){     
     
     //Os dois campos vazios
-    while (campos[0].value == '' && campos[1].value == '') {
+    if (campos[0].value == '' && campos[1].value == '') {
         let segundos = 0;        
         let temporizador = setInterval(function() {
             if (segundos == 1) {
@@ -85,12 +86,10 @@ function validarBotao(){
             segundos++;
             
             }, 400);
-
-            break
     }
 
     //Os dois campos não validados
-    while (campos[0].value.length < 3 && !telRegex.test(campos[1].value)) {        
+    else if (campos[0].value.length < 3 && !telRegex.test(campos[1].value)) {        
         let segundos = 0;        
         let temporizador = setInterval(function() {
             if (segundos == 1) {
@@ -106,11 +105,9 @@ function validarBotao(){
             segundos++;
             
             }, 400);
-
-            break
     }
     //campo nome vazio e campo telefone não validado
-    while (campos[0].value == '' && !telRegex.test(campos[1].value)) {
+    else if (campos[0].value == '' && !telRegex.test(campos[1].value)) {
         let segundos = 0;        
         let temporizador = setInterval(function() {
             if (segundos == 1) {
@@ -125,11 +122,9 @@ function validarBotao(){
             segundos++;
             
             }, 400);
-
-            break
     }
     //campo nome não validado e campo telefone vazio
-    while (campos[0].value.length < 3 && campos[1].value == '') {
+    else if (campos[0].value.length < 3 && campos[1].value == '') {
         let segundos = 0;        
         let temporizador = setInterval(function() {
             if (segundos == 1) {
@@ -144,11 +139,9 @@ function validarBotao(){
             segundos++;
             
             }, 400);
-
-            break
     }
     //somente o campo nome não validado
-    while (campos[0].value.length < 3) {
+    else if (campos[0].value.length < 3) {
         let segundos = 0;        
         let temporizador = setInterval(function() {
             if (segundos == 1) {
@@ -161,11 +154,9 @@ function validarBotao(){
             segundos++;
             
             }, 400);
-
-            break
     }
     //somente o campo telefone não validado
-    while (!telRegex.test(campos[1].value)) {
+    else if (!telRegex.test(campos[1].value)) {
         let segundos = 0;        
         let temporizador = setInterval(function() {
             if (segundos == 1) {
@@ -178,13 +169,15 @@ function validarBotao(){
             segundos++;
             
             }, 400);
-
-            break
     }
 
-    if (campos[0].value.length >= 3 && telRegex.test(campos[1].value)) {
-        formBarbeiro.style.display = "block"
+    else if (campos[0].value.length >= 3 && telRegex.test(campos[1].value)) {
         formCliente.style.display = "none"
+        formBarbeiro.style.display = "block"
+        setTimeout(() => {
+            formBarbeiro.classList.add("show");
+        })
+        
         window.scroll({
             top: 0,
             left: 0,
@@ -202,49 +195,72 @@ function escolherBarbeiro() {
     let barbeiroInputs = document.querySelectorAll("input[name='opcao']");
     let barbeiroValue;
     let imagens = document.getElementsByClassName("imagem-barbeiro");
+    let botao = document.getElementById("botao-barbeiro");
 
     for (let i = 0; i < barbeiroInputs.length; i++) {
         if (barbeiroInputs[i].checked) {
             barbeiroValue = barbeiroInputs[i].value;
             break;
-        }
+        } 
     }
 
     for (let i = 0; i < imagens.length; i++) {
         if (barbeiroValue === "Edson Araújo") {
             imagens[0].style.border = "5px solid #ffbd59";
             imagens[1].style.border = "";
-            imagens[2].style.border = "";
+            imagens[2].style.border = "";            
+            botao.style.display = "inline-block"  
+            botao.classList.add("show");
         }
         else if (barbeiroValue === "Edilson Araújo") {
             imagens[1].style.border = "5px solid #ffbd59";
             imagens[0].style.border = "";
             imagens[2].style.border = "";
+            botao.style.display = "inline-block"  
+                botao.classList.add("show");
         }
         else if (barbeiroValue === "Bruno Luiz") {
             imagens[2].style.border = "5px solid #ffbd59";
             imagens[1].style.border = "";
             imagens[0].style.border = "";
-        }
-        else {
-            imagens[i].style.border = ""; // remove a borda das imagens que não foram selecionadas
-        }
+            botao.style.display = "inline-block"  
+            botao.classList.add("show");
+        }        
     }
 }
 
-function avancarServico() {    
-    formServico.style.display = "block";
-    formBarbeiro.style.display = "none";
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      });
-}
+function avancarServico() {
+    let barbeiroInputs = document.querySelectorAll("input[name='opcao']");
+    let selecionado = false;
+    
 
+    for (let i = 0; i < barbeiroInputs.length; i++) {
+        if (barbeiroInputs[i].checked) {
+            selecionado = true;
+            
+            break;
+        }
+    }
+
+    if (selecionado) {
+        formBarbeiro.style.display = "none";
+        formServico.style.display = "block";
+        setTimeout(() => {
+            formServico.classList.add("show");
+        }, 100);
+                    
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else {
+        alert("selecione um dos profissionais antes de avançar.")
+    }
+}
 function voltarCliente() {
     formBarbeiro.style.display = "none";
-    formCliente.style.display = "block";
+    formCliente.style.display = "block";    
     window.scroll({
         top: 0,
         left: 0,
@@ -262,7 +278,8 @@ const servico = document.getElementsByClassName(".input-radio")
 
 function escolherServico(servico) {
     let servicoInputs = document.querySelectorAll("input[name='servico']");
-    //let servicoValue; 
+    let servicoValue; 
+    let botao = document.getElementById("botao-servico");
     let borda = document.getElementsByTagName("td");    
     for (let i = 0; i < servicoInputs.length; i++) {
         if (servicoInputs[i].checked) {
@@ -275,7 +292,9 @@ function escolherServico(servico) {
         for (let i = 0; i < borda.length; i++) {
             if (i === 0 || i === 1) {
                 borda[0].style.border = "2px solid #ffbd59"; 
-                borda[1].style.border = "2px solid #ffbd59";                 
+                borda[1].style.border = "2px solid #ffbd59"; 
+                botao.style.display = "inline-block"  
+                botao.classList.add("show");
             } else {
                 borda[i].style.border = "";
             }
@@ -287,7 +306,9 @@ function escolherServico(servico) {
         for (let i = 0; i < borda.length; i++) {
             if (i === 2 || i === 3) {
                 borda[2].style.border = "2px solid #ffbd59"; 
-                borda[3].style.border = "2px solid #ffbd59";                 
+                borda[3].style.border = "2px solid #ffbd59";
+                botao.style.display = "inline-block"  
+                botao.classList.add("show");                 
             } else {
                 borda[i].style.border = "";
             }
@@ -299,7 +320,9 @@ function escolherServico(servico) {
         for (let i = 0; i < borda.length; i++) {
             if (i === 4 || i === 5) {
                 borda[4].style.border = "2px solid #ffbd59"; 
-                borda[5].style.border = "2px solid #ffbd59";                 
+                borda[5].style.border = "2px solid #ffbd59";
+                botao.style.display = "inline-block"  
+                botao.classList.add("show");                 
             } else {
                 borda[i].style.border = "";
             }
@@ -311,7 +334,9 @@ function escolherServico(servico) {
         for (let i = 0; i < borda.length; i++) {
             if (i === 6 || i === 7) {
                 borda[6].style.border = "2px solid #ffbd59"; 
-                borda[7].style.border = "2px solid #ffbd59";                 
+                borda[7].style.border = "2px solid #ffbd59";
+                botao.style.display = "inline-block"  
+                botao.classList.add("show");                 
             } else {
                 borda[i].style.border = "";
             }
@@ -323,7 +348,9 @@ function escolherServico(servico) {
         for (let i = 0; i < borda.length; i++) {
             if (i === 8 || i === 9) {
                 borda[8].style.border = "2px solid #ffbd59"; 
-                borda[9].style.border = "2px solid #ffbd59";                 
+                borda[9].style.border = "2px solid #ffbd59";
+                botao.style.display = "inline-block"  
+                botao.classList.add("show");                 
             } else {
                 borda[i].style.border = "";
             }
@@ -335,7 +362,9 @@ function escolherServico(servico) {
         for (let i = 0; i < borda.length; i++) {
             if (i === 10 || i === 11) {
                 borda[10].style.border = "2px solid #ffbd59"; 
-                borda[11].style.border = "2px solid #ffbd59";                 
+                borda[11].style.border = "2px solid #ffbd59"; 
+                botao.style.display = "inline-block"  
+                botao.classList.add("show");                
             } else {
                 borda[i].style.border = "";
             }
@@ -347,7 +376,9 @@ function escolherServico(servico) {
         for (let i = 0; i < borda.length; i++) {
             if (i === 12 || i === 13) {
                 borda[12].style.border = "2px solid #ffbd59"; 
-                borda[13].style.border = "2px solid #ffbd59";                 
+                borda[13].style.border = "2px solid #ffbd59"; 
+                botao.style.display = "inline-block"  
+                botao.classList.add("show");                
             } else {
                 borda[i].style.border = "";
             }
@@ -359,7 +390,9 @@ function escolherServico(servico) {
         for (let i = 0; i < borda.length; i++) {
             if (i === 14 || i === 15) {
                 borda[14].style.border = "2px solid #ffbd59"; 
-                borda[15].style.border = "2px solid #ffbd59";                 
+                borda[15].style.border = "2px solid #ffbd59";
+                botao.style.display = "inline-block"  
+                botao.classList.add("show");                 
             } else {
                 borda[i].style.border = "";
             }
@@ -372,6 +405,8 @@ function escolherServico(servico) {
             if (i === 16 || i === 17) {
                 borda[16].style.border = "2px solid #ffbd59"; 
                 borda[17].style.border = "2px solid #ffbd59";                 
+                botao.style.display = "inline-block"  
+                botao.classList.add("show");
             } else {
                 borda[i].style.border = "";
             }
@@ -384,6 +419,9 @@ function escolherServico(servico) {
 function avancarData() {    
     formServico.style.display = "none";
     formData.style.display = "block";
+    setTimeout(() => {
+        formData.classList.add("show");
+    }, 100);
     window.scroll({
         top: 0,
         left: 0,
@@ -434,18 +472,19 @@ function diaDeFuncionamento() {
         alert("Não trabalhamos as terças-feiras nem aos domingos.");
         selectHorario.style.display = "none";
         botao.style.display = "none"
-        $(spanSelect).hide().fadeIn(1000); 
+        $(spanSelect).fadeIn(1000); 
     }
     else {
         spanSelect.style.display = "none";
         $(selectHorario).fadeTo(500, 1);
-        $(botao).fadeTo(1000, 1);
+        $(botao).fadeIn(1000);
     }
 }
 
 
 //validar campo horario
 function horarioDisponivel() {
+    let resumo = document.getElementById("resumo")
     let inputDia = document.getElementById("date-input");
     let opcoes = document.getElementsByClassName("opcao");
     let select = document.getElementById("horario");
@@ -463,7 +502,8 @@ function horarioDisponivel() {
         for(let i = 0; i < opcoes.length; i++) {
             let opcao = opcoes[i];
            if (opcao.value <= horaAtual) {
-              opcao.style.display = "none";
+                opcao.style.display = "none";  
+                resumo.style.display = "none" ;             
             }
         }
     }
@@ -471,6 +511,7 @@ function horarioDisponivel() {
         for (let i = 0; i < opcoes.length; i++) {
             let opcao = opcoes[i];
             opcao.style.display = "";
+            resumo.style.display = "none";
         }
     }
 }
@@ -539,8 +580,11 @@ function voltarServico() {
 
 function enviarFormulario() {    
     //formCadastro.submit();  
-    formFinal.style.display = "block";
     formData.style.display = "none";
+    formFinal.style.display = "block";
+    setTimeout(function() {
+        formFinal.classList.add("show");
+    }, 100)
     window.scroll({
         top: 0,
         left: 0,
