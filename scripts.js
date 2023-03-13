@@ -561,7 +561,7 @@ function validarFormulario() {
         "<p>Serviço: " + servicoValue + "</p>" +
         "<p>Data: " + data + "</p>" +
         "<p>Hora: " + hora + "h</p>" +
-        "<button id='botao-agendar' type='submit' onclick='enviarFormulario()'>" + "Confirmar" + "</button>";
+        "<button id='botao-agendar' type='button' onclick='enviarFormulario()'>" + "Confirmar" + "</button>";
         $(resumo).fadeTo(1000,1)       
         botaoAvancar.style.display = "none" 
            
