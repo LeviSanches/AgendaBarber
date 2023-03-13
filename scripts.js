@@ -528,6 +528,9 @@ function mudancaHorario() {
 function validarFormulario() {   
     let hora = document.getElementById("horario").value
     let data = document.getElementById("date-input").value 
+    let dataObj = new Date(data);      
+    dataObj.setDate(dataObj.getDate() + 1);
+    let dataFormatada = dataObj.toLocaleDateString('pt-BR');
     let barbeiroInputs = document.querySelectorAll("input[name='opcao']");
     let barbeiroValue;
     let servicoInputs = document.querySelectorAll("input[name='servico']");
@@ -559,7 +562,7 @@ function validarFormulario() {
         resumo.innerHTML = "<h2>Resumo:</h2>" +         
         "<p>Barbeiro: " + barbeiroValue + "</p>" +
         "<p>Serviço: " + servicoValue + "</p>" +
-        "<p>Data: " + data + "</p>" +
+        "<p>Data: " + dataFormatada + "</p>" +
         "<p>Hora: " + hora + "h</p>" +
         "<button id='botao-agendar' type='button' onclick='enviarFormulario()'>" + "Confirmar" + "</button>";
         $(resumo).fadeTo(1000,1)       
